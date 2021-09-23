@@ -1,0 +1,25 @@
+# zap logger configuration
+zap:
+  level: 'info'
+  format: 'console'
+#  format: 'json'
+  prefix: '[GIN-VUE-ADMIN]'
+  director: 'log'
+  link-name: 'latest_log'
+  show-line: true
+  encode-level: 'LowercaseLevelEncoder'
+#  encode-level: 'LowercaseColorLevelEncoder'
+  stacktrace-key: 'stacktrace'
+  log-in-console: true
+
+# system configuration
+system:
+  env: 'public'  # Change to "develop" to skip authentication for development mode
+  addr: 8080
+  db-type: 'mysql'
+  oss-type: 'local'    # 控制oss选择走本期还是 七牛等其他仓 自行增加其他oss仓可以在 server/utils/upload/upload.go 中 NewOss函数配置
+  use-multipoint: false
+
+# local configuration
+local:
+  path: 'uploads/file'
