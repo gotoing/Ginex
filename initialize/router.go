@@ -4,6 +4,8 @@ import (
 	//"gines/middleware"
 	//_ "ginex/docs"
 	"ginex/global"
+	"ginex/router"
+
 	//"ginex/router"
 	"net/http"
 
@@ -27,14 +29,14 @@ func Routers() *gin.Engine {
 	// 方便统一添加路由组前缀 多服务器上线使用
 
 	//获取路由组实例
-	//systemRouter := router.RouterGroupApp.System
+	systemRouter := router.RouterGroupApp.System
 	//exampleRouter := router.RouterGroupApp.Example
 	//autocodeRouter := router.RouterGroupApp.Autocode
-	//PublicGroup := Router.Group("")
-	//{
-	//	//systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
-	//	//systemRouter.InitInitRouter(PublicGroup) // 自动初始化相关
-	//}
+	PublicGroup := Router.Group("")
+	{
+		systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
+		//systemRouter.InitInitRouter(PublicGroup) // 自动初始化相关
+	}
 	//PrivateGroup := Router.Group("")
 	//PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
 	//{

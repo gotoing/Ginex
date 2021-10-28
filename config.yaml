@@ -3,7 +3,7 @@ zap:
   level: 'info'
   format: 'console'
 #  format: 'json'
-  prefix: '[GIN-VUE-ADMIN]'
+  prefix: '[GINEX] '
   director: 'log'
   link-name: 'latest_log'
   show-line: true
@@ -15,11 +15,27 @@ zap:
 # system configuration
 system:
   env: 'public'  # Change to "develop" to skip authentication for development mode
-  addr: 8080
+  addr: 8888
   db-type: 'mysql'
   oss-type: 'local'    # 控制oss选择走本期还是 七牛等其他仓 自行增加其他oss仓可以在 server/utils/upload/upload.go 中 NewOss函数配置
   use-multipoint: false
-
+# captcha configuration
+captcha:
+  key-long: 6
+  img-width: 240
+  img-height: 80
 # local configuration
 local:
   path: 'uploads/file'
+
+# mysql connect configuration
+mysql:
+  path: '127.0.0.1'
+  config: 'charset=utf8mb4'
+  db-name: 'gin'
+  username: 'gin'
+  password: 'gin123'
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: false
+  log-zap: ""

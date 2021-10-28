@@ -3,12 +3,12 @@ package config
 type Setting struct {
 	Zap Zap `mapstructure:"zap" json:"zap" yaml:"zap"`
 	//JWT     JWT     `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
-	//Mysql   Mysql   `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Mysql Mysql `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
 	//Redis   Redis   `mapstructure:"redis" json:"redis" yaml:"redis"`
 	//Email   Email   `mapstructure:"email" json:"email" yaml:"email"`
 	//Casbin  Casbin  `mapstructure:"casbin" json:"casbin" yaml:"casbin"`
-	System System `mapstructure:"system" json:"system" yaml:"system"`
-	//Captcha Captcha `mapstructure:"captcha" json:"captcha" yaml:"captcha"`
+	System  System  `mapstructure:"system" json:"system" yaml:"system"`
+	Captcha Captcha `mapstructure:"captcha" json:"captcha" yaml:"captcha"`
 
 	// auto
 	//AutoCode Autocode `mapstructure:"autoCode" json:"autoCode" yaml:"autoCode"`
